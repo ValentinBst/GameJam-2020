@@ -11,10 +11,12 @@ public class Tir : MonoBehaviour
     float forceTir;
 
     Camera mainCamera;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -35,8 +37,10 @@ public class Tir : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            GetComponent<Rigidbody>().AddForce(camBalle * forceTir, ForceMode.Impulse);
+            rb.AddForce(camBalle * forceTir, ForceMode.Impulse);
         }
+
+        Debug.Log(rb.velocity.magnitude);
     }
 
     private void LateUpdate()

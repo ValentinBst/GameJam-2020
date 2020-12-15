@@ -1060,6 +1060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balle
       objectReference: {fileID: 0}
+    - target: {fileID: 7872457521236824533, guid: 1a909fb96e1ec3543928b378303ce067,
+        type: 3}
+      propertyPath: directionGizmo
+      value: 
+      objectReference: {fileID: 4022315660372574925}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a909fb96e1ec3543928b378303ce067, type: 3}
 --- !u!4 &4022315660027833334 stripped
