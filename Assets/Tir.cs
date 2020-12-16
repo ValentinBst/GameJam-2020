@@ -27,6 +27,7 @@ public class Tir : MonoBehaviour
 
     float timer;
     int sensTimer = 1;
+    float force;
     void Start()
     {
         mainCamera = Camera.main;
@@ -45,7 +46,7 @@ public class Tir : MonoBehaviour
             //JE STOPPE LA BALLE POUR DE VRAI
             rigidBodyDeLaBalle.velocity = Vector3.zero;
 
-            float force = 0f;
+          
 
             //SI JE RESTE APPUYE 
             if (Input.GetMouseButton(0))
@@ -80,6 +81,7 @@ public class Tir : MonoBehaviour
                  Vector3 directionBalle = GetVecteurDirectionBalle();
                 //ON ENVOIE LA BALLE
                  rigidBodyDeLaBalle.AddForce(directionBalle * force, ForceMode.Impulse);
+                force = 0f;
             }
         }
         //QUAND LA BALLE EST EN MOUVEMENT
