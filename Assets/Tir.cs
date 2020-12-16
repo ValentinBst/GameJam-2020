@@ -5,18 +5,20 @@ using UnityEngine;
 public class Tir : MonoBehaviour
 {
     [SerializeField]
-    Transform directionGizmo;
+    Transform flecheDirectionObjet;
 
     [SerializeField]
     float forceTir;
 
     Camera mainCamera;
-    Rigidbody rb;
+    Rigidbody rigidBodyDeLaBalle;
     // Start is called before the first frame update
+    [SerializeField]
+    private float Mini = 0.5f;
     void Start()
     {
         mainCamera = Camera.main;
-        rb = GetComponent<Rigidbody>();
+        rigidBodyDeLaBalle = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -33,18 +35,28 @@ public class Tir : MonoBehaviour
 
 
         Vector3 positionDirection = transform.position + camBalle * 3f;
-        directionGizmo.LookAt(positionDirection);
+        flecheDirectionObjet.LookAt(positionDirection);
 
         if(Input.GetMouseButtonDown(0))
         {
-            rb.AddForce(camBalle * forceTir, ForceMode.Impulse);
+            rigidBodyDeLaBalle.AddForce(camBalle * forceTir, ForceMode.Impulse);
         }
 
-        Debug.Log(rb.velocity.magnitude);
+        //QUAND LA BALLE EST A L'ARRET
+        if (rigidBodyDeLaBalle.velocity.magnitude <= Mini)
+        {
+            rigidBodyDeLaBalle.velocity = Vector3.zero;
+            flecheDirectionObjet.gameObject.SetActive(true);
+        }
+        //QUAND LA BALLE EST EN MOUVEMENT
+        else if(rigidBodyDeLaBalle.velocity.magnitude > 0.1f)
+        {
+            flecheDirectionObjet.gameObject.SetActive(false);
+        }
     }
 
     private void LateUpdate()
     {
-        directionGizmo.position = transform.position;
+        flecheDirectionObjet.position = transform.position;
     }
 }
