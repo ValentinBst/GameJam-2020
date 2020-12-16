@@ -9,8 +9,9 @@ public class Deathzone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.gameObject.tag == "Player")
+        if (other.transform.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Trigger player");
             other.transform.position = respawnPositions;
         }
     }
