@@ -25,9 +25,17 @@ public class Tir : MonoBehaviour
     [SerializeField]
     float tempsPourChargerAuMin = 0.25f;
 
+    Vector3 LastPosition;
+
     float timer;
     int sensTimer = 1;
     float force;
+
+    public void ResetPosition()
+    {
+        transform.position = LastPosition;
+        rigidBodyDeLaBalle.velocity = Vector3.zero;
+    }
     void Start()
     {
         mainCamera = Camera.main;
@@ -77,6 +85,7 @@ public class Tir : MonoBehaviour
             //SI JE RELACHE, J'ENVOIE LA BALLE
             if(Input.GetMouseButtonUp(0) && force > 0f)
             {
+                LastPosition = transform.position;
                  timer = tempsPourChargerAuMin;
                  Vector3 directionBalle = GetVecteurDirectionBalle();
                 //ON ENVOIE LA BALLE
