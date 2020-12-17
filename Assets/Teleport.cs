@@ -11,6 +11,7 @@ public class Teleport : MonoBehaviour {
         if (col.rigidbody.velocity.magnitude < 0.1f) {
 
             col.transform.position = destination.position;
+            col.transform.GetComponent<Balle>().positionDeDepart = destination.position;
         }
         
     }

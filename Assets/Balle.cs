@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tir : MonoBehaviour
+public class Balle : MonoBehaviour
 {
     [SerializeField]
     Transform flecheDirectionObjet;
@@ -34,15 +34,23 @@ public class Tir : MonoBehaviour
     int sensTimer = 1;
     float force;
 
-    public void ResetPosition()
+    public Vector3 positionDeDepart;
+
+    public void ResetPositionAuDernierTir()
     {
         transform.position = LastPosition;
+        rigidBodyDeLaBalle.velocity = Vector3.zero;
+    }
+    public void ResetPositionAuDebutDuLevel()
+    {
+        transform.position = positionDeDepart;
         rigidBodyDeLaBalle.velocity = Vector3.zero;
     }
     void Start()
     {
         mainCamera = Camera.main;
         rigidBodyDeLaBalle = GetComponent<Rigidbody>();
+        positionDeDepart = transform.position;
     }
 
     // Update is called once per frame

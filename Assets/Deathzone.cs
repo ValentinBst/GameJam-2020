@@ -10,8 +10,8 @@ public class Deathzone : MonoBehaviour
         if (other.transform.gameObject.CompareTag("Player"))
         {
             Debug.Log("Trigger player");
-            Tir balle = other.GetComponent<Tir>();
-            balle.ResetPosition();
+            Balle balle = other.GetComponent<Balle>();
+            balle.ResetPositionAuDernierTir();
         }
     }
 }
