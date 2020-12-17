@@ -25,6 +25,9 @@ public class Tir : MonoBehaviour
     [SerializeField]
     float tempsPourChargerAuMin = 0.25f;
 
+    [SerializeField]
+    Score score;
+
     Vector3 LastPosition;
 
     float timer;
@@ -91,6 +94,9 @@ public class Tir : MonoBehaviour
                 //ON ENVOIE LA BALLE
                  rigidBodyDeLaBalle.AddForce(directionBalle * force, ForceMode.Impulse);
                 force = 0f;
+
+                score.Shoot();
+
             }
         }
         //QUAND LA BALLE EST EN MOUVEMENT
