@@ -25324,6 +25324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5273654881473452346, guid: 00f9685d9ac4c7246a47eee1fcbbf124,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00f9685d9ac4c7246a47eee1fcbbf124, type: 3}
 --- !u!1001 &1174751434
@@ -31530,7 +31535,7 @@ MonoBehaviour:
   volumeLayer:
     serializedVersion: 2
     m_Bits: 256
-  stopNaNPropagation: 1
+  stopNaNPropagation: 0
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
   temporalAntialiasing:
@@ -31568,8 +31573,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []

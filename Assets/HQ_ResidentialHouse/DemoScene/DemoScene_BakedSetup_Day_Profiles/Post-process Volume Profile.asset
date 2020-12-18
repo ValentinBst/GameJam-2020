@@ -21,7 +21,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.63
+    value: 0.58
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -67,19 +67,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 3.16
+    value: 7
   threshold:
     overrideState: 1
-    value: 1
+    value: 1.2
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
-    value: 65472
+    value: 65482.46
   diffusion:
     overrideState: 1
-    value: 7
+    value: 8.5
   anamorphicRatio:
     overrideState: 1
     value: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 0
+    value: 2
   toneCurveToeStrength:
     overrideState: 1
     value: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 0
+    value: 13
   tint:
     overrideState: 1
     value: 0
@@ -177,16 +177,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 0
+    value: 40
   brightness:
     overrideState: 1
     value: 0
   postExposure:
     overrideState: 1
-    value: 0
+    value: 0.5
   contrast:
     overrideState: 1
-    value: 0
+    value: -25
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
