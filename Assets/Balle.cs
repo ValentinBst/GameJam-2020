@@ -46,16 +46,28 @@ public class Balle : MonoBehaviour
         transform.position = positionDeDepart;
         rigidBodyDeLaBalle.velocity = Vector3.zero;
     }
+
+    public AudioClip Son;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        AudioSource.PlayClipAtPoint(Son, gameObject.transform.position);
+    }
+
     void Start()
     {
         mainCamera = Camera.main;
         rigidBodyDeLaBalle = GetComponent<Rigidbody>();
         positionDeDepart = transform.position;
     }
+    public bool canShoot;
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!canShoot)
+            return;
+
         //QUAND LA BALLE EST PRESQUE A L'ARRET (<= Mini)
         if (rigidBodyDeLaBalle.velocity.magnitude <= Mini)
         {
