@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WinMenu : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     // Start is called before the first frame update
     public void Restart()
     {

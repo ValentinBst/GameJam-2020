@@ -20,6 +20,7 @@ public class Teleport : MonoBehaviour {
             {
                 col.transform.position = destination.position;
                 col.transform.GetComponent<Balle>().positionDeDepart = destination.position;
+                destination.GetComponent<CamEffect>()?.ShowEffect();
             }
             else
             {

@@ -59,6 +59,14 @@ public class Balle : MonoBehaviour
         mainCamera = Camera.main;
         rigidBodyDeLaBalle = GetComponent<Rigidbody>();
         positionDeDepart = transform.position;
+        Invoke("FirstCam", 0.2f);
+    }
+
+    [SerializeField]
+    CamEffect lvl1;
+    public void FirstCam()
+    {
+        lvl1.ShowEffect();
     }
     public bool canShoot;
 
